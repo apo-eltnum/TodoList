@@ -1,6 +1,20 @@
-# TestProject
+# TodoList
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.4.
+
+## Initialization 
+
+To install dependencies, run:
+
+```bash
+npm install
+```
+
+Don't forget to install Angular as well:
+
+```bash
+npm install -g @angular/cli
+```
 
 ## Development server
 
