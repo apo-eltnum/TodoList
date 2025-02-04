@@ -1,0 +1,34 @@
+<div class="container mt-4">
+  <div class="row">
+    <h3>Hola Perros de {{nombre}}</h3>
+    <h4>La suma de 10 + 5 = {{getSuma(10,5)}}</h4>
+    <input type="text" class="form control" [placeholder]="placeholder" [disabled]="deshabilitado">
+    <br>
+    <div class="container mt-4">
+      <div class="row">
+        <h3>Listado de estudiantes</h3>
+        <button class="btn btn-small btn-primary ml-auto" (click)="toggle()">Toggle</button>
+      </div>
+      <br>
+      <table class="table" *ngIf="show">
+        <thead>
+          <th>No.</th>
+          <th>Nombre</th>
+          <th>Estado</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of listStudents ; let i = index">
+            <td [ngStyle]="{'font-style': i%2 ? 'italic': 'normal'}"> {{i+1}}</td>
+            <td>{{student.name}}</td>
+            <td>
+              <span [ngClass]="student.status==='Promocionado' ? 'badge badge-success': 'badge badge-secondary'">
+                {{student.status}}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 *ngIf="listStudents.length ===0">No hay registros para mostrar</h3>
+    </div>
+  </div>
+</div>
